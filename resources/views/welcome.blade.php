@@ -28,15 +28,35 @@
             <!-- se for falso nada é impresso na tela semelhante sistema do Angular -->
         @endif
 
-        <p> {{ $nome }} </p>
+        <p> {{ $nome2 }} </p>
         <!-- muito parecido com a logística das diretivas -->
-        @if ($nome == "Pedro")
+        @if ($nome2 == "Pedro")
             <p>The name is Pedro </p>
-        @elseif($nome == "João")
-            <p>The name is {{ $nome }} and he have {{ $idade }} old. He work witch {{ $profissao }} </p>
+        @elseif($nome2 == "João")
+            <p>The name is {{ $nome2 }} and he have {{ $idade }} old. He work witch {{ $profissao }} </p>
         @else
             <p>The name not is Pedro</p>
             <!-- cai no else pq o nomé é João -->
         @endIf
+
+        <!-- trbalhando com loops -->
+        @For($i = 0; $i < count($arr); $i++ )
+            <p style=" border:  1px solid #ccc" width="50px" heigth="50px"> {{ $arr[$i] }} </p>
+            @if($i == 2)
+                <p>O i é 2</p>
+            @endif
+        @endFor
+        
+
+        @foreach($nomes as $nome)
+            <p> {{ $loop->index }} </p>
+            <p> {{ $nome }} </p>
+        @endforeach
+
+       
+        @php
+            $name2 = "Pedro";
+            echo $name2;
+        @endphp
     </body>
 </html>
