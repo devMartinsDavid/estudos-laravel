@@ -23,9 +23,20 @@
     <body>
         <!-- diretivas do blade -->
         <h1>Any title</h1>
-        @if(10 > 15)
+        @if(10 > 5)
             <p>The condition is true</p>
             <!-- se for falso nada é impresso na tela semelhante sistema do Angular -->
         @endif
+
+        <p> {{ $nome }} </p>
+        <!-- muito parecido com a logística das diretivas -->
+        @if ($nome == "Pedro")
+            <p>The name is Pedro </p>
+        @elseif($nome == "João")
+            <p>The name is {{ $nome }} and he have {{ $idade }} old. He work witch {{ $profissao }} </p>
+        @else
+            <p>The name not is Pedro</p>
+            <!-- cai no else pq o nomé é João -->
+        @endIf
     </body>
 </html>

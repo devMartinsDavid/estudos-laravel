@@ -14,7 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $nome = "João";
+    $idade = 23;
+
+
+    return view('welcome', ['nome' => $nome, 'idade' => $idade, 'profissao' => "Administrative assistant"]);
+    // com chaves duplas dá pra usar essa variável lá no views
 });
 Route::get('/contact', function () {
     return view('contact');
