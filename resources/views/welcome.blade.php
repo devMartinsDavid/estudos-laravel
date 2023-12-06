@@ -58,5 +58,9 @@
             $name2 = "Pedro";
             echo $name2;
         @endphp
+
+        <div>
+            <a href="/events/create">Criar eventos</a>
+        </div>
     </body>
 </html>
