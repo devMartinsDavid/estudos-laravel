@@ -4,23 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+//chamando o método que criamos do model pra poder ter acesso ao banco de dados
+use App\Models\Event;
+
+
 class EventController extends Controller
 {
     public function index() { 
-        $nome2 = "João";
-        $idade = 23;
-        $arr = [10, 20, 30, 40, 50];
-        $nomes = ["Maria", "João", "Matheus", "Pedro"];
-    
-        return view('welcome', 
-        [
-            'nome2' => $nome2,
-            'idade' => $idade,
-            'profissao' => "Administrative assistant",
-            'arr' => $arr,
-            'nomes' => $nomes,
-        ]);
-        // com chaves duplas dá pra usar essa variável lá no views
+
+        $events = Event::all(); //método ORM que pega todos os resgistros
+
+        return view('welcome', ['events' => $events]);
     }
     public function create() {
         return view('events.create');

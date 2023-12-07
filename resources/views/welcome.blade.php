@@ -18,49 +18,31 @@
             body {
                 font-family: 'Nunito', sans-serif;
             }
+            .container{
+                display:flex;
+                justify-content: center;
+            }
+            .dados{
+                display:block;
+                text-align:center;
+                border:1px solid black;
+                width:400px;
+                margin-left:40%;
+            }
         </style>
     </head>
     <body>
-        <!-- diretivas do blade -->
-        <h1>Any title</h1>
-        @if(10 > 5)
-            <p>The condition is true</p>
-            <!-- se for falso nada é impresso na tela semelhante sistema do Angular -->
-        @endif
-
-        <p> {{ $nome2 }} </p>
-        <!-- muito parecido com a logística das diretivas -->
-        @if ($nome2 == "Pedro")
-            <p>The name is Pedro </p>
-        @elseif($nome2 == "João")
-            <p>The name is {{ $nome2 }} and he have {{ $idade }} old. He work witch {{ $profissao }} </p>
-        @else
-            <p>The name not is Pedro</p>
-            <!-- cai no else pq o nomé é João -->
-        @endIf
-
-        <!-- trbalhando com loops -->
-        @For($i = 0; $i < count($arr); $i++ )
-            <p style=" border:  1px solid #ccc" width="50px" heigth="50px"> {{ $arr[$i] }} </p>
-            @if($i == 2)
-                <p>O i é 2</p>
-            @endif
-        @endFor
-        
-
-        @foreach($nomes as $nome)
-            <p> {{ $loop->index }} </p>
-            <p> {{ $nome }} </p>
-        @endforeach
-
-       
-        @php
-            $name2 = "Pedro";
-            echo $name2;
-        @endphp
-
-        <div>
-            <a href="/events/create">Criar eventos</a>
+        <div class="container">
+            <div>
+                <h1>Página que mostra o que contém no banco de dados</h1>
+            </div>
         </div>
+
+        <div class="dados">
+            @foreach($events as $event)
+                <p> {{ $event->id }} -- {{ $event->title }} -- {{ $event->description }} -- {{ $event->city }} </p>
+            @endforeach
+        </div>
+        
     </body>
 </html>
