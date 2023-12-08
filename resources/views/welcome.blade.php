@@ -17,12 +17,12 @@
     <div id="cards-container" class="row">
         @foreach($events as $event)
         <div class="card col-md-3 customer-card">
-            <img src="./image/modern.jpg" alt="{{ $event->title }}">
+            <img src="./image/events/{{ $event->image }} " alt="{{ $event->title }}">
             <div class="card-body">
                 <p class="card-date">11/05/2023</p>
                 <h5 class="card-title">{{$event->title}}</h5>
                 <p class="card-participantes">X participantes</p>
-                <a href="#" class="btn btn-primary">Saiba mais...</a>
+                <a href="/create/{{ $event->id }}" class="btn btn-primary">Saiba mais...</a>
             </div>
         </div>
         @endforeach
