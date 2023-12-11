@@ -7,14 +7,12 @@ html, body{
     background-image: url('./../image/background.svg');
     color: aliceblue;
 }
-
 #container{
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
 }
-
 #event-create-container{
     padding: 30px;
     border: 1px solid rebeccapurple;
@@ -26,7 +24,15 @@ html, body{
     margin-top: 2px;
     font-size: 12px;
 }
-
+#items-list{
+    list-style: none;
+}
+#info-container h3{
+    margin-top: 10px;
+}
+#description-container h3{
+    margin-top: 10px;
+}
 #cards-container{
     display: flex;
     justify-content: center;
